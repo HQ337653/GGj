@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background2
+    uniqueID: 3563128087
+    locked: 0
+  - name: Background
+    uniqueID: 129565781
+    locked: 0
+  - name: middle2
+    uniqueID: 4234456729
+    locked: 0
+  - name: middle1
+    uniqueID: 3144457789
+    locked: 0
+  - name: front
+    uniqueID: 2509338193
+    locked: 0
+  - name: Vfx
+    uniqueID: 1226266779
+    locked: 0
