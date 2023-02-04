@@ -16,7 +16,7 @@ public class enemyfire : MonoBehaviour
     }
 
     IEnumerator shoot(){
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < 1; i++){
             Enemyattack();
             yield return new WaitForSeconds(2f);
         }

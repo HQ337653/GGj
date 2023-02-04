@@ -12,8 +12,15 @@ public class EnemyHp : MonoBehaviour
     [SerializeField]
 
     float currentHp;
+
     public void Damage(float amount)
     {
+        currentHp = defaltMaxHp;
+        currentHp -= amount;
+        if(currentHp < 0){
+            Destroy(gameObject);
+
+        }
 
     }
 

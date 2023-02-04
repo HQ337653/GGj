@@ -23,5 +23,6 @@ public class enemiesmanage : MonoBehaviour
         GameObject tempenemy = Instantiate(enemies[num], spawnpoint, Quaternion.identity);
         tempenemy.AddComponent<Enemyai>();
         tempenemy.AddComponent<enemyfire>();
+        tempenemy.AddComponent<EnemyHp>();
     }
 }

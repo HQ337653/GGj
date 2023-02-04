@@ -6,15 +6,21 @@ public class Enemyai : MonoBehaviour
 {
     // Start is called before the first frame update
     private float speed;
-    private Transform direction;
-    void Start()
-    {
+    void Start(){
+        transform.Rotate(Vector3.forward,180);
         speed = Random.Range(1f,6f);
+
+        StartCoroutine(Enemymovements());
+     
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        transform.Translate(Vector3.down*Time.deltaTime*speed);
+    IEnumerable Enemymovements(){
+        float bottomwally = -5f;
+        while(transform.position.y > bottomwally){
+            transform.Translate(Vector3.up*Time.deltaTime*speed);
+            yield return null;
+        }
+        
     }
 }

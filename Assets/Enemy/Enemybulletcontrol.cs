@@ -14,10 +14,11 @@ public class Enemybulletcontrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Destroy(gameObject,10f);
         transform.Translate(new Vector2(0,enemybulletspeed*Time.deltaTime));
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        
+        Destroy(gameObject);
     }
 }
