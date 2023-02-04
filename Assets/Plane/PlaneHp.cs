@@ -14,6 +14,7 @@ public class PlaneHp : MonoBehaviour
 
     public void takeDamage(float damage)
     {
+        EffectController.DoSelfDamagePopUp(transform.position,damage);
         currentHp-=damage;
         if(currentHp < 0)
         {
