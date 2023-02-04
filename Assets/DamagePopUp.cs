@@ -9,7 +9,7 @@ public class DamagePopUp : MonoBehaviour
     public void Set(float amount)
     {
         TextMeshPro textMeshPro = GetComponent<TextMeshPro>();
-        textMeshPro.text = amount.ToString();
+        textMeshPro.text = ((int)amount).ToString();
         StartCoroutine(dieProcess(0.5f));
     }
 

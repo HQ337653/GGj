@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EffectController : MonoBehaviour
@@ -15,6 +16,6 @@ public class EffectController : MonoBehaviour
     {
         GameObject g= Instantiate(instance.DamagePopup);
         g.transform.position = worldPosition;
-
+        g.GetComponent<DamagePopUp>().Set(amount);
     }
 }

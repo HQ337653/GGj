@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c668904e7444541bbd9358dec48ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamagePopup: {fileID: 0}
+  DamagePopup: {fileID: 8837632602451190496, guid: 9de621a3f9dc54a4daab6f891822b593, type: 3}
 --- !u!114 &1268933245
 MonoBehaviour:
   m_ObjectHideFlags: 0
