@@ -11,18 +11,25 @@ public class enemyfire : MonoBehaviour
     {
         firePos = transform.GetChild(0);
         enemybullet = Resources.Load<GameObject>("enemybullets");
-       
-        InvokeRepeating("Enemyattack",1f,1f);
+        
+        StartCoroutine(shoot());
     }
 
-    // Update is called once per frame
+    IEnumerator shoot(){
+        for(int i = 0; i < 10; i++){
+            Enemyattack();
+            yield return new WaitForSeconds(2f);
+        }
+        yield return null;
+    }
+
     void Update()
     {
         
     }
 
-    public void Enemyattack(){
-        GameObject tempBullet = Instantiate(enemybullet, firePos);
+    void Enemyattack(){
+        GameObject tempBullet = Instantiate(enemybullet, firePos.position, firePos.rotation);
         tempBullet.AddComponent<Enemybulletcontrol>();  
     }
 }

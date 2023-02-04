@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemybulletcontrol : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float enemybulletspeed = 2f;
+    private float enemybulletspeed = 10f;
     void Start()
     {
         //Destroy(gameObject, 7f);
@@ -15,5 +15,9 @@ public class Enemybulletcontrol : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector2(0,enemybulletspeed*Time.deltaTime));
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        
     }
 }

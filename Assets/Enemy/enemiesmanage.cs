@@ -8,7 +8,7 @@ public class enemiesmanage : MonoBehaviour
     void Start()
     {
         enemies = Resources.LoadAll<GameObject>("enemyprefab");
-        
+        InvokeRepeating("CreatEnemies", 0f, 1f);
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class enemiesmanage : MonoBehaviour
         int num = Random.Range(0, enemies.Length);
         Vector3 spawnpoint = new Vector3(Random.Range(-20f, 20f), 20f, 1f);
         GameObject tempenemy = Instantiate(enemies[num], spawnpoint, Quaternion.identity);
-
-
+        tempenemy.AddComponent<Enemyai>();
+        tempenemy.AddComponent<enemyfire>();
     }
 }
