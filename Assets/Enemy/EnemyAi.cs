@@ -14,13 +14,15 @@ public class Enemyai : MonoBehaviour
      
     }
 
-    // Update is called once per frame
-    IEnumerable Enemymovements(){
+    
+    IEnumerator Enemymovements(){
         float bottomwally = -5f;
         while(transform.position.y > bottomwally){
             transform.Translate(Vector3.up*Time.deltaTime*speed);
             yield return null;
         }
+        Destroy(gameObject);
+        yield return null;
         
     }
 }

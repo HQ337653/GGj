@@ -8,7 +8,7 @@ public class Enemybulletcontrol : MonoBehaviour
     private float enemybulletspeed = 10f;
     void Start()
     {
-        //Destroy(gameObject, 7f);
+        Destroy(gameObject, 7f);
     }
 
     // Update is called once per frame
