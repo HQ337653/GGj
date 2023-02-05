@@ -205,6 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4e1e7e756a8ac4aad00ade8762ee3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planes: {fileID: 0}
+  velocity: 3
 --- !u!4 &309447762
 Transform:
   m_ObjectHideFlags: 0
