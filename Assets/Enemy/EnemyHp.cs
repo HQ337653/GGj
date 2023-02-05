@@ -17,7 +17,8 @@ public class EnemyHp : MonoBehaviour
     {
         currentHp = defaltMaxHp;
         currentHp -= amount;
-        if(currentHp < 0){
+        if (currentHp < 0)
+        {
             Destroy(gameObject);
 
         }

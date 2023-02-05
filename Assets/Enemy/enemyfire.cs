@@ -11,12 +11,15 @@ public class enemyfire : MonoBehaviour
     {
         firePos = transform.GetChild(0);
         enemybullet = Resources.Load<GameObject>("enemybullets");
-        
+
         StartCoroutine(shoot());
     }
 
-    IEnumerator shoot(){
-        for(int i = 0; i < 1; i++){
+    IEnumerator shoot()
+    {
+        yield return new WaitForSeconds(2f);
+        for (int i = 0; i < 20; i++)
+        {
             Enemyattack();
             yield return new WaitForSeconds(2f);
         }
@@ -25,11 +28,12 @@ public class enemyfire : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
-    void Enemyattack(){
+    void Enemyattack()
+    {
         GameObject tempBullet = Instantiate(enemybullet, firePos.position, firePos.rotation);
-        tempBullet.AddComponent<Enemybulletcontrol>();  
+        tempBullet.AddComponent<Enemybulletcontrol>();
     }
 }
