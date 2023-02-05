@@ -13,9 +13,13 @@ public class CharaBulletOne : MonoBehaviour
         if (HpScript != null)
         {
             HpScript.Damage(DamageAmount);
+            Destroy(gameObject);
         }
 
+        
+    }
+    private void OnBecameInvisible()
+    {
         Destroy(gameObject);
     }
-
 }
