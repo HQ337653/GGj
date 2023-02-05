@@ -36,7 +36,6 @@ public class planeController : MonoBehaviour
 
     private void Move(Vector2 i)
     {
-        Debug.Log("!!!!!!");
         Rigidbody2D.velocity = i;
     }
 

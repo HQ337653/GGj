@@ -15,6 +15,7 @@ public class EnemyHp : MonoBehaviour
 
     public void Damage(float amount)
     {
+        EffectController.DoDamagePopUp(transform.position,amount);
         currentHp = defaltMaxHp;
         currentHp -= amount;
         if (currentHp < 0)
