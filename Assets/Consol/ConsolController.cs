@@ -22,11 +22,15 @@ public class ConsolController : MonoBehaviour
     public static handler SetModeTo;
     public delegate void handle(Vector2 i);
     public static handle Move;
+    public bool canEnter = true;
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.Alpha1)&& canEnter == true)
         {
             SetModeTo?.Invoke(0);
+            StartCoroutine(countDown(5));
+            Debug.Log(1);
+                
         }
         else if (Input.GetKey(KeyCode.Alpha2))
         {
@@ -59,5 +63,16 @@ public class ConsolController : MonoBehaviour
         
         Vector2 direction = new Vector2(horizontal, vertical);
         Move?.Invoke(direction * velocity);
+    }
+    IEnumerator countDown(float duration)
+    {
+        Debug.Log(2);
+        canEnter = false;
+        yield return new WaitForSeconds(duration);
+        canEnter = true;
+        SetModeTo?.Invoke(1);
+        Debug.Log(3);
+        
+        
     }
 }
