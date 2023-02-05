@@ -7,6 +7,7 @@ public class enemiesmanage : MonoBehaviour
     private GameObject[] enemies;
     private Vector3 flyerspawnpoint;
     private Vector3 stationaryfighterspawnpoint;
+    private int level = 1;
     void Start()
     {
         enemies = Resources.LoadAll<GameObject>("enemyprefab");
@@ -20,13 +21,16 @@ public class enemiesmanage : MonoBehaviour
     {
         while (1 < 2)
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < level+2; i++)
             {
                 StartCoroutine(SpawnRandomEnemies());
                 yield return new WaitForSeconds(3f);
             }
+            for(int i = 0; i < level/2; i++){
             StartCoroutine(LotsOfEnemies());
             yield return new WaitForSeconds(15f);
+            }      
+            level += 1;
         }
 
     }

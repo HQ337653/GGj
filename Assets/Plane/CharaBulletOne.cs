@@ -5,8 +5,9 @@ using UnityEngine;
 public class CharaBulletOne : MonoBehaviour
 {
     [SerializeField]
-    float DamageAmount;
+    float DamageAmount = 10f;
 
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         EnemyHp HpScript = collision.GetComponent<EnemyHp>();
@@ -15,7 +16,7 @@ public class CharaBulletOne : MonoBehaviour
             HpScript.Damage(DamageAmount);
             Destroy(gameObject);
         }
-
+        
         
     }
     private void OnBecameInvisible()

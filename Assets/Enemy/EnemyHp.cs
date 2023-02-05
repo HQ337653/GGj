@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHp : MonoBehaviour
-{
+public class EnemyHp : MonoBehaviour{
+
     [SerializeField]
     float defaltMaxHp;
     [SerializeField]
@@ -14,18 +14,20 @@ public class EnemyHp : MonoBehaviour
     float currentHp;
 
     void Start(){
-        defaltMaxHp = 1000f;
+        Debug.Log(gameObject.name);
+        defaltMaxHp = 30f;
+        currentHp = defaltMaxHp;
+    
     }
 
     public void Damage(float amount)
     {
         EffectController.DoDamagePopUp(transform.position,amount);
-        currentHp = defaltMaxHp;
         currentHp -= amount;
-        if (currentHp < 0)
+        if (currentHp <= 0)
         {
+            Debug.Log(currentHp);
             Destroy(gameObject);
-
         }
 
     }
