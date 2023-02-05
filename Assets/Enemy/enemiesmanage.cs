@@ -8,12 +8,17 @@ public class enemiesmanage : MonoBehaviour
     private Vector3 flyerspawnpoint;
     private Vector3 stationaryfighterspawnpoint;
     private int level = 1;
+    public static int life = 10;
     void Start()
     {
         enemies = Resources.LoadAll<GameObject>("enemyprefab");
-
-
         StartCoroutine(SpawnEnemyModeControl());
+    }
+    void Update(){
+        
+        if(life == 0){
+            Application.Quit();
+        }
 
     }
 

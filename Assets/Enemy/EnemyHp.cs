@@ -14,8 +14,7 @@ public class EnemyHp : MonoBehaviour{
     float currentHp;
 
     void Start(){
-        Debug.Log(gameObject.name);
-        defaltMaxHp = 30f;
+        defaltMaxHp = 100f;
         currentHp = defaltMaxHp;
     
     }
@@ -26,7 +25,7 @@ public class EnemyHp : MonoBehaviour{
         currentHp -= amount;
         if (currentHp <= 0)
         {
-            Debug.Log(currentHp);
+            
             Destroy(gameObject);
         }
 

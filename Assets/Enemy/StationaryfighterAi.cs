@@ -25,13 +25,17 @@ public class StationaryfighterAi : MonoBehaviour
 
     IEnumerator Enemymovements()
     {
-        float bottomwally = -10f;
+        float bottomwally = -15f;
         while (transform.position.y > bottomwally)
         {
             transform.Translate(Vector3.up * Time.deltaTime * speed);
             yield return null;
         }
-        Destroy(gameObject);
+        if(transform.position.y > bottomwally){
+            enemiesmanage.life -= 1;
+            Destroy(gameObject);
+            
+        }
         yield return null;
 
     }
