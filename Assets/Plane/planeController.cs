@@ -15,6 +15,8 @@ public class planeController : MonoBehaviour
     [SerializeField]
     Color B;
     [SerializeField]
+    Color C;
+    [SerializeField]
     TextMeshPro TMP;
     [SerializeField]
     int indx;
@@ -44,7 +46,11 @@ public class planeController : MonoBehaviour
         Renderer.color = B;
         StartCoroutine(Stop());
     }
-
+    public void NotInMoce()
+    {
+        Renderer.color = C;
+        StartCoroutine(Stop());
+    }
     IEnumerator Stop()
     {
         yield return null;

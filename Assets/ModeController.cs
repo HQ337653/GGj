@@ -17,5 +17,11 @@ public class ModeController : MonoBehaviour
             ModeChangediFToImagine?.Invoke(InInmagine);
         }
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            change(!InInmagine);
+        }
+    }
 }

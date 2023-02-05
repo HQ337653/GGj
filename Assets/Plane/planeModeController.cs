@@ -31,6 +31,20 @@ public class planeModeController : MonoBehaviour
     private void ChangeState(bool i)
     {
         this.enabled = !i;
+        if (i)
+        {
+            foreach (planeController p in planes)
+            {
+                p.NotInMoce();
+            }
+        } else if (!i)
+        {
+            foreach (planeController p in planes)
+            {
+                p.Unselected();
+            }
+            planes[currentIndex].selected();
+        }
     }
 
     //change plane to Index
