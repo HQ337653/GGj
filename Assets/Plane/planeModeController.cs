@@ -134,15 +134,7 @@ public class planeModeController : MonoBehaviour
             currentController.Explode();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AddPlane();
-        }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            PlaneDie(1);
-        }
 
     }
 
