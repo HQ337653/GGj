@@ -22,9 +22,12 @@ public class planeController : MonoBehaviour
     int indx;
     [SerializeField]
     GameObject[] shootingMode;
+
+    [SerializeField]
+    GameObject ExplodePre;
     public void initiate(Vector3 position, int index)
     {
-        indx=index;
+        indx=index-1;
         TMP.text = index.ToString();
     }
     private void Start()
@@ -45,7 +48,7 @@ public class planeController : MonoBehaviour
     }
     public void changeNum(int index)
     {
-        indx = index;
+        indx = index-1;
         TMP.text= index.ToString();
     }
     #region IndividualControl
@@ -90,6 +93,11 @@ public class planeController : MonoBehaviour
             Debug.Log("Overlap with " + overlap.gameObject.name);
             overlap.GetComponent<EnemyHp>()?.Damage(100);
         }
+
+       GameObject g= Instantiate(ExplodePre);
+        g.transform.position = transform.position;
+        die();
+        Destroy(gameObject);
     }
     #endregion
 

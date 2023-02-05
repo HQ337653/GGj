@@ -304,6 +304,7 @@ MonoBehaviour:
   shootingMode:
   - {fileID: 8614826320590645241}
   - {fileID: 8049508378611997035}
+  ExplodePre: {fileID: 6882143561697130722, guid: 329079535fb8b3d42ac607c1fbec3efb, type: 3}
   ExplodeRegion: {fileID: 7455555947849135957}
 --- !u!114 &1587593554083052909
 MonoBehaviour:
