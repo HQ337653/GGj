@@ -13,6 +13,10 @@ public class EnemyHp : MonoBehaviour
 
     float currentHp;
 
+    void Start(){
+        defaltMaxHp = 1000f;
+    }
+
     public void Damage(float amount)
     {
         EffectController.DoDamagePopUp(transform.position,amount);

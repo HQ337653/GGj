@@ -81,7 +81,7 @@ public class enemiesmanage : MonoBehaviour
     }
     IEnumerator CreatEnemiesstationaryfigher()
     {
-        stationaryfighterspawnpoint = new Vector3(Random.Range(-10f, 10f), 20f, 1f);
+        stationaryfighterspawnpoint = new Vector3(Random.Range(-10f, 10f), 15f, 1f);
         GameObject tempenemy = Instantiate(enemies[1], stationaryfighterspawnpoint, Quaternion.identity);
         tempenemy.AddComponent<StationaryfighterAi>();
         tempenemy.AddComponent<enemyfire>();

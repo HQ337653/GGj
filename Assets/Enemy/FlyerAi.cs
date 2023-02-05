@@ -33,6 +33,7 @@ public class FlyerAi : MonoBehaviour
         if (transform.position.x > sidewallx || transform.position.x < -sidewallx)
         {
             Destroy(gameObject);
+            
         }
 
     }
