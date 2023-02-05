@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ScrollController : MonoBehaviour
@@ -16,6 +17,7 @@ public class ScrollController : MonoBehaviour
     private void OnBecameInvisible()
     {
         transform.position = top.position;
+        
     }
 
 }
