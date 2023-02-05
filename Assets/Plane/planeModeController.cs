@@ -119,6 +119,13 @@ public class planeModeController : MonoBehaviour
         }
         #endregion
 
+
+       
+            if (Input.GetKeyDown(KeyCode.E))
+        {
+            currentController.Explode();
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             AddPlane();
