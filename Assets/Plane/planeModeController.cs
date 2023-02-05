@@ -50,7 +50,11 @@ public class planeModeController : MonoBehaviour
     //change plane to Index
     public void changeControl(int PlaneIndex)
     {
-        Debug.Log(PlaneIndex);
+        if (planes.Count==0)
+        {
+            Debug.Log("LLLLLOOOOOOSSSSSSWEEEEEEEEEEEEE");
+            return;
+        }
         currentIndex=PlaneIndex;
         if (PlaneIndex< planes.Count)
         {
@@ -87,7 +91,11 @@ public class planeModeController : MonoBehaviour
         }
         
         Vector2 direction = new Vector2(horizontal,vertical);
-        currentController.setVelocity(direction* MoveSpeed);
+        if (currentController!=null)
+        {
+        currentController?.setVelocity(direction* MoveSpeed);
+        }
+
         #endregion
 
         #region changePlane
@@ -149,15 +157,8 @@ public class planeModeController : MonoBehaviour
         }
         if (currentIndex == index)
         {
-            if (currentIndex < planes.Count - 1)
-            {
-                currentIndex += 1;
-            }
-            else
-            {
-                currentIndex = 0;
-
-            }
+                instance.currentIndex = 0;
+                instance.changeControl(currentIndex);
         }
     }
 
